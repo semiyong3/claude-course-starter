@@ -1,0 +1,38 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "P:/01_RUNTIME/NodeJS/node-v24/node.exe",
+            "args": [
+              "P:/03_PROJECTS/00_Learning/2610_Inflearn_Claude Code/claude-course-starter/.claude/hooks/block-dangerous-commands.js"
+            ],
+            "timeout": 10,
+            "statusMessage": "위험한 명령 검사 중..."
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe",
+            "args": [
+              "-NoProfile",
+              "-ExecutionPolicy",
+              "Bypass",
+              "-File",
+              "P:/03_PROJECTS/00_Learning/2610_Inflearn_Claude Code/claude-course-starter/.claude/hooks/notify.ps1"
+            ],
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

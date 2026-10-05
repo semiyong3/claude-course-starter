@@ -51,7 +51,11 @@ export default function Home() {
       <Header todos={todos} />
       <TodoInput onAdd={addTodo} />
       <FilterBar filter={filter} onChange={setFilter} />
-      <TodoList todos={visibleTodos} onToggle={toggleTodo} onDelete={deleteTodo} />
+      <TodoList
+        todos={visibleTodos}
+        onToggle={toggleTodo}
+        onDelete={deleteTodo}
+      />
     </>
   );
 }
